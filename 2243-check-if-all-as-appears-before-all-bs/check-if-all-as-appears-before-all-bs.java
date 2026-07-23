@@ -4,7 +4,7 @@ class Solution {
         for(int i = 0; i<s.length()-1; i++)
         {
             
-            if(s.charAt(i) == 'b' && s.charAt(i+1) =='a')
+            if(s.contains("ba"))
             {
                 flag = false;
             }
