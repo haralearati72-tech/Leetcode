@@ -1,23 +1,23 @@
 class Solution {
     public int firstUniqChar(String s) {
+      
+        for(int i = 0; i<s.length();i++)
+        {   boolean flag = false;
+            char ch = s.charAt(i);
 
-        int[] freq = new int[26];
-
-        // count frequency
-        for(int i = 0; i < s.length(); i++)
+          for(int j =0; j<s.length(); j++)
+          {
+             if(i != j && ch == s.charAt(j))
+             {
+                flag= true;
+                break;
+             }
+          }
+         if(flag==false)
         {
-            freq[s.charAt(i) - 'a']++;
+            return i;
         }
-
-        // find answer
-        for(int i = 0; i < s.length(); i++)
-        {
-            if(freq[s.charAt(i) - 'a'] == 1)
-            {
-                return i;
-            }
         }
-
         return -1;
     }
 }
